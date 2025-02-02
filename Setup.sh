@@ -208,6 +208,8 @@ EOF
   case $CHOICE in
   yes)
     msg_info "Adding NAS Storage"
+    mkdir -p /mnt/pve/ISO
+    mkdir -p /mnt pve VM-Storage
     echo "192.168.2.21:/mnt/Jango/Utility/PVE_ISO   /mnt/pve/ISO    nfs nofail,x-systemd.automount,rw   0   0" >> /etc/fstab
     echo "192.168.2.99:/volume1/PVE   /mnt/pve/VM-Storage    nfs nofail,x-systemd.automount,rw   0   0" >> /etc/fstab
     msg_ok "Completed Post Install Routines"
